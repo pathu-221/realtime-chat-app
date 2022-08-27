@@ -1,6 +1,3 @@
-import logo from './logo.svg';
-import './App.css';
-
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import ChatRoom from './components/chatroom/chatroom.component';

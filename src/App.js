@@ -1,3 +1,5 @@
+
+import './App.css';
 import { useAuthState } from 'react-firebase-hooks/auth';
 
 import ChatRoom from './components/chatroom/chatroom.component';
@@ -11,7 +13,7 @@ function App() {
   return (
     <div className="App">
       <header>
-      <h1>⚛️🔥💬</h1>
+      <h1>Hello, {auth.currentUser ? auth.currentUser.displayName : 'Guest'}</h1>
         <SignOut auth={auth}/>
       </header>
       <section>

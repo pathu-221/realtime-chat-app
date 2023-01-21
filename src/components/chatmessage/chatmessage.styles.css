@@ -1,0 +1,48 @@
+.message {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    margin-right: 30px;
+    gap: 10px;
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 21px;
+    /* identical to box height */
+    color: #FFFFFF;
+}
+
+.message img {
+    height: 44px;
+    width: 44px;
+    border-radius: 50%;
+    filter: drop-shadow(4px 4px 24px rgba(0, 0, 0, 0.45));
+}
+
+.message p {
+    padding: 14px 24px 14px 20px;
+    word-wrap: break-word;
+    max-width: 60vw;
+}
+
+
+.sent {
+    align-self: flex-end;
+    flex-direction: row-reverse;
+}
+
+.sent p {
+    background: #7A8194;
+    border-radius: 20px;
+}
+
+.received {
+    align-self: flex-start;
+
+}
+
+.received p {
+    background: #373E4E;
+    border-radius: 20px 
+}

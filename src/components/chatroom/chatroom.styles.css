@@ -1,0 +1,46 @@
+.chat-messages {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.message-form {
+    padding: 20px 26px 37px 26px;
+}
+
+.sent-button {
+    background-color: transparent;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    background: #3D4354;
+    border-radius: 25px;
+    padding-top: 15px;
+    padding-bottom: 16px;
+
+}
+
+.input-group input {
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    padding: 10px;
+    width: calc(100% - 27px);
+}
+
+input::placeholder {
+    font-family: 'Mulish';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 13px;
+    line-height: 24px;
+    /* identical to box height, or 185% */
+    color: rgba(255, 255, 255, 0.45);
+}

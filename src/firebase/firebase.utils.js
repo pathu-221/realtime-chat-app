@@ -1,6 +1,6 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, signInWithPopup, GoogleAuthProvider } from "firebase/auth";
-import { getFirestore, collection, getDocs, query, orderBy, limit, setDoc, serverTimestamp, doc } from "firebase/firestore";
+import { getFirestore, collection, getDocs, query, orderBy, setDoc, serverTimestamp, doc } from "firebase/firestore";
 
 export const app = initializeApp({
   apiKey: "AIzaSyBdfPuV3eNgdlqfa7r-ode1_Y1xanPkKac",
@@ -12,14 +12,13 @@ export const app = initializeApp({
 });
 
 
-const db = getFirestore(app);
+export const db = getFirestore(app);
 export const resolveMessage = async () => {
 
   let messages = [];
   const messagesRef = collection(db, 'messages');
   const q = query(messagesRef, orderBy('createdAt'));
   const querySnapshot = await getDocs(q);
-
   querySnapshot.forEach((doc) => {
     // doc.data() is never undefined for query doc snapshots
     messages.push(doc.data());

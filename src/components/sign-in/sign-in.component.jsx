@@ -1,5 +1,5 @@
 import React from 'react';
-
+import './signin.styles.css';
 import { signinwithgoogle } from '../../firebase/firebase.utils';
 
 function SignIn() {

@@ -1,7 +1,7 @@
 .chat-messages {
     display: flex;
     flex-direction: column;
-    max-height: 80vh;
+    max-height: calc(80vh + 10px);
     gap: 12px;
     overflow-y: scroll;
 }
@@ -45,9 +45,8 @@
 
 
 .message-form {
-    box-sizing: border-box;
-    max-height: 150px;
     padding: 10px;
+    box-sizing: border-box;
 }
 
 .sent-button {
@@ -64,22 +63,19 @@
     align-items: center;
     background: #3D4354;
     border-radius: 25px;
-    padding-top: 15px;
-    padding-bottom: 16px;
-    padding-left: 20px;
-    padding-right: 20px;
-
+    padding: 10px 20px;
 }
 
 .input-group input {
     height: 100%;
+    padding: 2px 0;
     border: none;
     background-color: transparent;
     width: calc(100% - 27px);
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 21px;
 
     /* identical to box height */
@@ -95,7 +91,7 @@ input::placeholder {
     font-family: 'Mulish';
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 24px;
     /* identical to box height, or 185% */
     color: rgba(255, 255, 255, 0.45);

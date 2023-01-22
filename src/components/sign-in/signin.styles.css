@@ -1,7 +1,11 @@
 .sign-in-button {
     cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     padding: 19px 52px;
-    width: 339px;
+    width: clamp(80%, 339px, 50%);
     height: 61px;
     font-family: 'Inter';
     font-style: normal;
@@ -10,6 +14,7 @@
     line-height: 20px;
     color: #FFFFFF;
     background: #7A8194;
+    border: none;
     border-radius: 15px;
     align-self: center;
     display: flex;

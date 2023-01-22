@@ -13,7 +13,9 @@ function ChatRoom(auth) {
   const [formValue, setFormValue] = useState('');
 
   const dummy = useRef();
-
+  const scrollto = () => {
+    dummy.current.scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"});
+  }
   useEffect(()=>{
     //resolveMessage().then(data => receiveMessages(data));
     const collectionRef = collection(db, 'messages');
@@ -26,8 +28,9 @@ function ChatRoom(auth) {
       })
       data.reverse();
       receiveMessages(data);
+   
     })
-    dummy.current.scrollIntoView({behavior: "smooth"});
+    scrollto();
     return () => {
       console.log('unsubscribe');
       unsubscribe();
@@ -38,14 +41,12 @@ function ChatRoom(auth) {
   const handleSubmit = async e => {
 
     e.preventDefault();
-    console.log(formValue);
     await sendMessage(formValue);
     setFormValue('');
-
-    // await resolveMessage().then(data => receiveMessages(data));
-
+    scrollto();
   }
 
+ 
   return (
     <>
     <main className='chat-messages'> 
@@ -54,7 +55,6 @@ function ChatRoom(auth) {
         <ChatMessage key={message.createdAt} message={message}/>) : <p>loading...</p>
       }
       <div ref={dummy}></div>
-     
     </main>
 
     <form className='message-form' onSubmit={handleSubmit}>

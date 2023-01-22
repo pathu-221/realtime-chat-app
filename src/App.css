@@ -16,6 +16,7 @@ header {
   align-items: center;
   justify-content: space-between;
   padding: 40px ;
+  padding-bottom: 10px;
 }
 
 header h1  {

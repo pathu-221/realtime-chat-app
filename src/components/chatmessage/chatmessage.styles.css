@@ -46,3 +46,9 @@
     background: #373E4E;
     border-radius: 20px 
 }
+
+@media screen and (max-width: 750px) {
+    .message {
+        margin: 0 10px;
+    }
+}

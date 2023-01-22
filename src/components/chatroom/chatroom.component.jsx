@@ -7,12 +7,9 @@ import { useRef } from 'react';
 
 import './chatroom.styles.css';
 
-const months = ["January", "February", "March", "April", "May"
-, "June", "July", "August", "September", "October", "November", "December"];
-
 function ChatRoom(auth) {
 
-  const [messages, receiveMessages] = useState([]);
+  const [messages, receiveMessages] = useState();
   const [formValue, setFormValue] = useState('');
 
   const dummy = useRef();
@@ -20,15 +17,14 @@ function ChatRoom(auth) {
   useEffect(()=>{
     //resolveMessage().then(data => receiveMessages(data));
     const collectionRef = collection(db, 'messages');
-    const q = query(collectionRef, orderBy('createdAt'), limit(25));
-    console.log(q);
+    const q = query(collectionRef, orderBy('createdAt', 'desc'), limit(25));
     const unsubscribe = onSnapshot(q, (snapshot) => {
       const data = [];
       snapshot.forEach(doc => {
         const message = doc.data();
         data.push(message);
-        console.log(message.createdAt.toDate().getHours());
       })
+      data.reverse();
       receiveMessages(data);
     })
 
@@ -40,8 +36,9 @@ function ChatRoom(auth) {
 
   
   const handleSubmit = async e => {
+
     e.preventDefault();
-    if(formValue.length > 0)
+    console.log(formValue);
     await sendMessage(formValue);
     setFormValue('');
 
@@ -54,7 +51,7 @@ function ChatRoom(auth) {
     <main className='chat-messages'> 
       {
         messages ? messages.map(message => 
-        <ChatMessage key={message.createdAt} message={message}/>) : <p>loading</p>
+        <ChatMessage key={message.createdAt} message={message}/>) : <p>loading...</p>
       }
       <div ref={dummy}></div>
      

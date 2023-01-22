@@ -35,7 +35,7 @@ export const sendMessage = async (message) => {
     createdAt: serverTimestamp(),
     uid: auth.currentUser.uid,
     photoURL: auth.currentUser.photoURL
-  });
+  })
 }
 
 const provider = new GoogleAuthProvider();

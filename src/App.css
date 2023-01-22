@@ -1,6 +1,15 @@
 .App {
   background: #1B202D;
+  height: 100vh;
+  max-height: 100vh;
 }
+
+.App section {
+  max-height: calc(100vh - 133px);
+  display: flex;
+  flex-direction: column;
+}
+
 
 header {
   display: flex;

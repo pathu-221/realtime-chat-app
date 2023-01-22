@@ -1,0 +1,29 @@
+.sign-in-button {
+    cursor: pointer;
+    padding: 19px 52px;
+    width: 339px;
+    height: 61px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 20px;
+    color: #FFFFFF;
+    background: #7A8194;
+    border-radius: 15px;
+    align-self: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+}
+
+
+
+.sign-in-button:hover {
+    background: rgba(122, 129, 148, .8);
+}
+
+.anonymous {
+    margin-top: 20px;
+}

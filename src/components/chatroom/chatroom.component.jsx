@@ -27,7 +27,7 @@ function ChatRoom(auth) {
       data.reverse();
       receiveMessages(data);
     })
-
+    dummy.current.scrollIntoView({behavior: "smooth"});
     return () => {
       console.log('unsubscribe');
       unsubscribe();
@@ -43,7 +43,7 @@ function ChatRoom(auth) {
     setFormValue('');
 
     // await resolveMessage().then(data => receiveMessages(data));
-    dummy.current.scrollIntoView({behavior: "smooth"});
+
   }
 
   return (

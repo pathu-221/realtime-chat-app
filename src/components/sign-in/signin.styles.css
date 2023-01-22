@@ -5,7 +5,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     padding: 19px 52px;
-    width: clamp(80%, 339px, 50%);
+    width: 339px;
     height: 61px;
     font-family: 'Inter';
     font-style: normal;
@@ -31,4 +31,10 @@
 
 .anonymous {
     margin-top: 20px;
+}
+
+@media screen and (max-width: 750px){
+    .sign-in-button {
+        width: 80%;
+    }
 }
